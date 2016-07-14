@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_action :set_user, only:[:show, :edit, :update]
+  before_action :confirm_user, only:[:edit, :update]
   
   def show
+    @user = User.find(params[:id])
   end
   
   def new
@@ -37,7 +38,10 @@ class UsersController < ApplicationController
                                  :password_confirmation)
   end
   
-  def set_user
+  def confirm_user
     @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_path
+    end
   end
 end

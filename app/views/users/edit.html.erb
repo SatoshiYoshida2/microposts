@@ -14,6 +14,12 @@
       <%= f.label :profile %>
       <%= f.text_area :profile %>
 
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
       <%= f.submit "Change my profile", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
