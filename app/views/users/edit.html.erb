@@ -6,19 +6,19 @@
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= f.text_field :email, class: 'form-control' %>
 
       <%= f.label :region %>
-      <%= f.text_field :region %>
+      <%= f.text_field :region, class: 'form-control' %>
 
       <%= f.label :profile %>
-      <%= f.text_area :profile %>
+      <%= f.text_area :profile, class: 'form-control' %>
 
       <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, class: 'form-control' %>
 
       <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Change my profile", class: "btn btn-large btn-primary" %>
     <% end %>
