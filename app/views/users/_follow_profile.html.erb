@@ -1,0 +1,10 @@
+<li>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <%= link_to gravatar_for(follow_profile, size: 50), follow_profile %>
+      <span class="user"><%= link_to follow_profile.name,follow_profile %></span>
+      <p class="profile"><%= follow_profile.profile %></p>
+    </div>
+</li>

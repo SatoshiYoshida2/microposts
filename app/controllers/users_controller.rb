@@ -32,6 +32,17 @@ class UsersController < ApplicationController
     end
   end 
   
+  def followings
+    @user = User.find(params[:id])
+    @followingusers = @user.following_users.order(created_at: :desc)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followerusers = @user.follower_users.order(created_at: :desc)
+  end
+  
+  
   private
 
   def user_params

@@ -1,0 +1,27 @@
+<section class="user_info">
+  <h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+  </h1>
+</section>
+<section>
+  <h2>
+    <span class="label label-info">E-mail</span><br>
+    <%= @user.email %>
+  </h2>
+  <h2>
+    <span class="label label-info">Region</span><br>
+    <%= @user.region %>
+  </h2>
+  <h2>
+    <span class="label label-info">Profile</span><br>
+    <%= @user.profile %>
+  </h2>
+</section>
+<section>
+  <h1>
+    <%= link_to "Microposts", user_path(@user) %>
+    <%= link_to "Followings", following_path(@user) %>
+    <%= link_to "Followers", follower_path(@user) %>
+  </h1>
+</section>

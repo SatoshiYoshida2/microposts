@@ -1,11 +1,6 @@
 <div class="row">
   <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
+    <%= render 'profile' %>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
@@ -16,10 +11,4 @@
       </ol>
     <% end %>
   </div>
-  <span class="label label-info">E-mail</span>
-  <%= @user.email %>
-  <span class="label label-info">Region</span>
-  <%= @user.region %>
-  <span class="label label-info">Profile</span>
-  <%= @user.profile %>
 </div>
