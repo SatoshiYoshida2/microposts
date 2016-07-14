@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :confirm_user, only:[:edit, :update]
+  
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.order(created_at: :desc)
@@ -18,10 +20,29 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+  
+  def update
+    if @user.update(user_params)
+      flash[:success] = "Your profile is changed!"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end 
+  
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,
+    params.require(:user).permit(:name, :email, :region, :profile, :password,
                                  :password_confirmation)
+  end
+  
+  def confirm_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+      redirect_to root_path
+    end
   end
 end
