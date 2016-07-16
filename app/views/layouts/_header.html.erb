@@ -14,8 +14,8 @@
               Users <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "Followings", follower_path(current_user) %></li>
-              <li><%= link_to "Followers", following_path(current_user) %></li>
+              <li><%= link_to "Followings", followers_user_path(current_user) %></li>
+              <li><%= link_to "Followers", followings_user_path(current_user) %></li>
             </ul>
           </li>
           

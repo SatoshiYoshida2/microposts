@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 
   # 他のユーザーをフォローする
   def follow(other_user)
+    # Relationship.find_or_create_by(followed_id: other_user.id, following_id: id)
     following_relationships.find_or_create_by(followed_id: other_user.id)
   end
 
@@ -34,6 +35,12 @@ class User < ActiveRecord::Base
 
   # あるユーザーをフォローしているかどうか？
   def following?(other_user)
+    # Relationship.find_by(followed_id: other_user.id, following_id: id).present?
     following_users.include?(other_user)
   end
+  
+  def feed_items
+    Micropost.where(user_id: following_user_ids + [self.id])
+  end
 end
+
