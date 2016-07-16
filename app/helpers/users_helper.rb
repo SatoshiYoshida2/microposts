@@ -5,4 +5,8 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
     image_tag(gravatar_url, alt: user.name, class: "gravatar")
   end
+  
+  def avatar_for(user, options = { size: "80x80" })
+    image_tag(user.avatar.url, alt: user.name, size: options[:size], class: "gravatar")
+  end
 end

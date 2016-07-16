@@ -3,7 +3,13 @@
     <div class="panel-heading">
     </div>
     <div class="panel-body">
-      <%= link_to gravatar_for(follow_profile, size: 50), follow_profile %>
+      
+      <% if follow_profile.avatar? %>
+        <%= link_to avatar_for(follow_profile, size: "50x50") , follow_profile %>
+      <% else %>
+        <%= link_to gravatar_for(follow_profile, size: 50), follow_profile %>
+      <% end %>
+      
       <span class="user"><%= link_to follow_profile.name,follow_profile %></span>
       <p class="profile"><%= follow_profile.profile %></p>
     </div>
