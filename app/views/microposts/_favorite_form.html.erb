@@ -1,0 +1,7 @@
+<div id="favorite_form_<%= favorite.id %>" >
+  <% if current_user.favorite?(favorite) %>
+    <%= render 'microposts/unfavorite', favorite: favorite %>
+  <% else %>
+    <%= render 'microposts/favorite', favorite: favorite %>
+  <% end %>
+</div>

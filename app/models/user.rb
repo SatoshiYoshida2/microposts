@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
                                     dependent:   :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower  
 
+  has_many :favorites
+  
+  has_many :favorite_microposts, through: :favorites, source: :favorite
+  
   # 他のユーザーをフォローする
   def follow(other_user)
     # Relationship.find_or_create_by(followed_id: other_user.id, following_id: id)
@@ -41,6 +45,19 @@ class User < ActiveRecord::Base
   
   def feed_items
     Micropost.where(user_id: following_user_ids + [self.id])
+  end
+  
+  def favorite(other_micropost)
+    favorites.find_or_create_by(favorite_id: other_micropost.id)
+  end
+
+  def unfavorite(other_micropost)
+    favorite = favorites.find_by(favorite_id: other_micropost.id)
+    favorite.destroy if favorite
+  end
+  
+  def favorite?(other_micropost)
+    favorite_microposts.include?(other_micropost)
   end
   
   mount_uploader :avatar, AvatarUploader

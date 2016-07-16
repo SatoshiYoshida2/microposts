@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :confirm_user, only:[:edit, :update]
+  before_action :confirm_user, only:[:edit, :update, :favorite]
   
   def show
     @user = User.find(params[:id])
@@ -42,6 +42,11 @@ class UsersController < ApplicationController
     @followerusers = @user.follower_users.order(created_at: :desc)
   end
   
+  
+  def favorites
+    @user = current_user
+    @favorite_microposts = @user.favorite_microposts.order(created_at: :desc)
+  end
   
   private
 
