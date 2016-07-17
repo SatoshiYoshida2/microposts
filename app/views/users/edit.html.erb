@@ -1,4 +1,4 @@
-<h1>Edit profile</h1>
+<h1><%= t('common.editprofile') %></h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -9,7 +9,7 @@
       <% if @user.avatar? %>
         <%= image_tag(@user.avatar.url, alt: @user.name, class: "gravatar") %>
         <span class="form-inline">
-          <br><%= f.label :remove_avatar, "Remove avatar image" %>
+          <br><%= f.label :remove_avatar, t('common.removeavatarimage') %>
           <%= f.check_box :remove_avatar, class: 'form-control'%><br>
         </span>
       <% else %>
@@ -30,10 +30,10 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, t('common.confirmation') %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Change my profile", class: "btn btn-large btn-primary" %>
+      <%= f.submit t('common.changemyprofile'), class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
 </div>

@@ -3,7 +3,7 @@
     <%= render 'profile' %>
   </aside>
   <div class="col-md-8">
-      <h3>Favorites (<%= @favorite_microposts.count %>)</h3>
+      <h3><%= t('common.favorites') %> (<%= @favorite_microposts.count %>)</h3>
       <ol class="microposts">
         <%= render partial: 'microposts/micropost', collection: @favorite_microposts %>
       </ol>

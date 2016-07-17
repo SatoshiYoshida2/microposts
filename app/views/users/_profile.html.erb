@@ -11,22 +11,22 @@
 </section>
 <section>
   <h2>
-    <span class="label label-info">E-mail</span><br>
+    <span class="label label-info"> <%= t('common.email') %> </span><br>
     <%= @user.email %>
   </h2>
   <h2>
-    <span class="label label-info">Region</span><br>
+    <span class="label label-info"> <%= t('common.region') %></span><br>
     <%= @user.region %>
   </h2>
   <h2>
-    <span class="label label-info">Profile</span><br>
+    <span class="label label-info"> <%= t('common.profile') %></span><br>
     <%= @user.profile %>
   </h2>
 </section>
 <section>
   <h1>
-    <%= link_to "Microposts", user_path(@user) %>
-    <%= link_to "Followings", followings_user_path(@user) %>
-    <%= link_to "Followers", followers_user_path(@user) %>
+    <%= link_to t('common.Microposts'), user_path(@user) %>
+    <%= link_to t('common.followings'), followings_user_path(@user) %>
+    <%= link_to t('common.followers'), followers_user_path(@user) %>
   </h1>
 </section>

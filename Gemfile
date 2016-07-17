@@ -40,6 +40,9 @@ gem "mini_magick"
 
 gem 'cloudinary', group: :production
 
+gem 'rails-i18n'
+gem 'i18n_generators'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

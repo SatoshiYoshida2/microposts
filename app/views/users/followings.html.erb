@@ -3,7 +3,7 @@
     <%= render 'profile' %>
   </aside>
   <div class="col-md-8">
-      <h3>Followings (<%= @followingusers.count %>)</h3>
+      <h3><%= t('common.followings') %> (<%= @followingusers.count %>)</h3>
       <ol class="microposts">
         <%= render partial: 'follow_profile', collection: @followingusers %>
       </ol>

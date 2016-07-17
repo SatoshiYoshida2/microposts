@@ -2,5 +2,5 @@
              html: { method: :delete },
              remote: true) do |f| %>
   <div><%= hidden_field_tag :favorite_id, favorite.id %></div>
-  <%= f.submit "Unfavorite", class: "btn" %>
+  <%= f.submit t('common.unfavorite'), class: "btn" %>
 <% end %>
