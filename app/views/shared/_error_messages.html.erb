@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      <%= t('common.form_contains_error',error: pluralize(object.errors.count,locale =  I18n.locale, t('common.error')  )) %>
+      <%= t('common.form_contains_error',error: pluralize(object.errors.count,t('common.error'), t('common.errors')  )) %>
     </div>
     <ul>
     <% object.errors.full_messages.each do |msg| %>

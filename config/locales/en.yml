@@ -63,6 +63,7 @@ en:
     unfavorite: "Unfavorite"
     form_contains_error: "The form contains %{error}."
     error: "error"
+    errors: "errors"
   flash:
     user_create: "Welcome to the Micropost!"
     user_update: "Your profile is changed!"

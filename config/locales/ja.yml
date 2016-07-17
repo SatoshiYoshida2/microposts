@@ -39,7 +39,8 @@ ja:
     favorite: "お気に入り登録"
     unfavorite: "お気に入り解除"
     form_contains_error: "フォームには%{error}が含まれています"
-    error: "個のエラー"
+    error: "つのエラー"
+    errors: "個のエラー"
   flash:
     user_create: "Micropostにようこそ!"
     user_update: "プロフィールを更新しました"
