@@ -65,8 +65,8 @@ ja:
         avatar: プロフィール画像
         remove_avatar: プロフィール画像削除
       micropost:
-      　content: 投稿内容
-      　image: 投稿画像
+        content: 投稿内容
+        image: 投稿画像
       relationship:
         follower: フォロワー 
         followed: フォロー
